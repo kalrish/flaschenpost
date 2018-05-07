@@ -6,4 +6,4 @@
 
 - [ ]  Move up a bit description paragraph in about pages
 
-- [ ]  Use a favicon
+- [x]  Use a favicon
