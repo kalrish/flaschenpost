@@ -5,3 +5,5 @@
     Using the same design as in my personal website.
 
 - [ ]  Move up a bit description paragraph in about pages
+
+- [ ]  Use a favicon
