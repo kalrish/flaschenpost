@@ -1,0 +1,91 @@
+@import "fonts/tangerine";
+
+@include critical(true) {
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	
+	#site-header {
+		flex: 0 0 auto;
+		text-align: center;
+	}
+	
+	#site-title {
+		display: inline-block;
+		font-family: "tangerine";
+		font-size: 75px;
+		//font-weight: bold;
+		margin-top: 17px;
+		margin-bottom: 9px;
+	}
+	
+	#navibar {
+		background-color: lightblue;
+		display: flex;
+		justify-content: space-between;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	.navibar-about-link {
+		padding: 10px 19px 11px;
+	}
+	
+	.navibar-about-link-current {
+		background-color: #1818ec;
+	}
+	
+	.navibar-about-link-other:hover {
+		background-color: #4343d7;
+		transition-duration: .7s;
+		transition-property: background-color;
+	}
+	
+	main {
+		flex: 1 1 auto;
+		margin-top: 40px;
+	}
+}
+
+@include critical(false) {
+	#site-footer {
+		align-items: center;
+		background-color: #ECECEC;
+		border-top: 1px solid grey;
+		display: flex;
+		flex: 0 0 auto;
+		justify-content: space-between;
+		margin-top: 50px;
+		padding: 13px 5px 13px;
+		@media (min-width: 650px) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	
+	#copyright-disclaimer {
+		flex: 0 1 auto;
+		font-size: medium;
+	}
+	
+	#site-footer-right {
+		flex: 0 0 auto;
+	}
+	
+	.site-footer-icon-link {
+		vertical-align: middle;
+	}
+	
+	.site-footer-icon-link + .site-footer-icon-link {
+		margin-left: 8px;
+	}
+	
+	.site-footer-icon {
+		display: inline-block;
+		height: 22px;
+		vertical-align: middle;
+		width: auto;
+	}
+}

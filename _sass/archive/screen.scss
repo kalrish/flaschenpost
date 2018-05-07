@@ -1,0 +1,23 @@
+@include critical(true) {
+	main {
+		margin-left: 34px;
+		margin-right: 34px;
+	}
+	
+	#post-list {
+		column-gap: 39px;
+		column-width: 60px;
+	}
+	
+	.post-item {
+		& + & {
+			margin-top: 5px;
+		}
+	}
+	
+	.post-link {
+		color: blue;
+		font-family: "Georgia";
+		text-decoration: underline;
+	}
+}

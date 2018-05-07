@@ -1,0 +1,7 @@
+{% for post in site.posts reversed %}
+	{% if post.id == page.id %}
+		{% assign post_index = forloop.index %}
+		{% break %}
+	{% endif %}
+{% endfor %}
+<title lang="de">{{ site.title }} &mdash; {{ post_index }}</title>

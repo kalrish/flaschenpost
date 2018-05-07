@@ -1,0 +1,15 @@
+{%- capture css -%}
+	@import "critical";
+	$include: "{{ include.type }}";
+	$baseurl: "{{ site.baseurl }}";
+	{% if page.lang %}
+		$lang: "{{ page.lang }}";
+	{% endif %}
+	@import "base";
+	@import "{{ include.css }}";
+	@media screen {
+		@import "base/screen";
+		@import "{{ include.css }}/screen";
+	}
+{%- endcapture -%}
+{{- css | scssify -}}

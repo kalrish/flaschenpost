@@ -1,0 +1,39 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">
+		{% feed_meta %}
+		{% capture critical_css %}
+			{% include scssify.css css=page.layout type="critical" %}
+		{% endcapture %}
+		{% include embed/css.html css=critical_css %}
+		<link rel="stylesheet" href="{{ "/assets/css/" | append: page.layout | append: ".css" | relative_url }}">
+		{% include head/{{ page.layout }}.html %}
+	</head>
+	<body>
+		<header id="site-header">
+			<a id="site-title" lang="de" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+			<nav id="navibar">
+				{% for about in site.data.abouts %}
+					{% capture about_url %}/about/{{ about.lang }}{% endcapture %}
+				<a class="navibar-about-link navibar-about-link-{% if page.url == about_url %}current{% else %}other{% endif %}" lang="{{ about.lang }}" href="{{ about_url | relative_url }}">{{ about.title }}</a>
+				{% endfor %}
+			</nav>
+		</header>
+		<main>
+			{{ content }}
+		</main>
+		<footer id="site-footer">
+			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">{{ site.author }}</a></small>
+			<nav id="site-footer-right">
+				<a class="site-footer-icon-link" href="mailto:{{ site.email }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>
+				<a class="site-footer-icon-link" rel="external" href="https://github.com/kalrish/flaschenpost">{% include embed/svg.html name="github" class="site-footer-icon" %}</a>
+				<a class="site-footer-icon-link" rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">{% include embed/svg.html name="feed" class="site-footer-icon" %}</a>
+			</nav>
+		</footer>
+	</body>
+</html>

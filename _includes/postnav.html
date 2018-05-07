@@ -1,0 +1,12 @@
+<div class="post-navigation">
+	{% assign pagedir = page[include.dir] %}
+	{% assign svg_class = "post-navigation-arrow" %}
+	{% if pagedir %}
+	<a class="post-navigation-link" rel="prev" href="{{ pagedir.url | relative_url }}">
+		{% assign svg_class = svg_class | append: " post-navigation-arrow-active" %}
+	{% endif %}
+	{% include embed/svg.html name=include.svg class=svg_class %}
+	{% if pagedir %}
+	</a>
+	{% endif %}
+</div>

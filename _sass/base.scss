@@ -1,0 +1,7 @@
+@import "reset";
+
+@include critical(true) {
+	* {
+		box-sizing: border-box;
+	}
+}

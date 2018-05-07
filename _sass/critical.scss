@@ -1,0 +1,6 @@
+$include: 'critical' !default;
+@mixin critical($is-critical) {
+	@if ( ($include == 'critical' and $is-critical) or ($include == 'noncritical' and not $is-critical) ) {
+		@content;
+	}
+}

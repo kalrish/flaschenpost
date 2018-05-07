@@ -1,0 +1,8 @@
+---
+layout: base
+---
+<ol id="post-list">
+{% for post in site.posts reversed %}
+	<li class="post-item"><a class="post-link" href="{{ post.url | relative_url }}">{{ forloop.index }}</a></li>
+{% endfor %}
+</ol>
