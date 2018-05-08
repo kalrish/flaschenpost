@@ -88,12 +88,4 @@
 		vertical-align: middle;
 		width: auto;
 	}
-	
-	#site-footer-icon-blog {
-		transition: transform 0.75s ease;
-		
-		&:hover {
-			transform: rotate(90deg);
-		}
-	}
 }
