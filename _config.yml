@@ -1,9 +1,9 @@
 # Site settings
 title: Flaschenpost
 author: David Joaquín Shourabi Porcel
-baseurl: "/flaschenpost"
-url: "https://www.davidjsp.eu"
-email: 'david@davidjsp.eu'
+baseurl: /
+url: https://flaschenpost.www.djsp.eu
+email: david@djsp.eu
 launchdate: 2018-05-07
 
 # Build settings
