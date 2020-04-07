@@ -1,4 +1,6 @@
-@import url('https://kalrish.github.io/webfonts/tangerine/regular.css');
+@include critical(true) {
+	@import url('https://kalrish.github.io/webfonts/tangerine/regular.css');
+}
 
 @include critical(true) {
 	body {
