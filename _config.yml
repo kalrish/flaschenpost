@@ -8,9 +8,6 @@ launchdate: 2018-05-07
 
 # Build settings
 strict_front_matter: true
-compress_html:
-   clippings: all
-   comments: all
 sass:
    style: compressed
 plugins:
