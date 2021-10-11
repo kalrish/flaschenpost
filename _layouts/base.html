@@ -1,40 +1,109 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">
-		<link rel="icon" type="image/svg+xml" href="//images.assets.djsp.eu/logos/flaschenpost-f9c742fe839cabb28b3f74a85de43c2c16c4f40940ffada4e1e965794e754cd0e7308d5f52fec9c611f5ad95f8b758201ee8240ffa5c9e3bb929bf4932550a28.svg">
-		<link rel="icon" type="image/png" sizes="16x16" href="//images.assets.djsp.eu/logos/flaschenpost-16x16-54fdba452a441618d9183fe20e462d1c07ebb3cd81e051c5c688e811b04c67387428aaef08d49ebd80d097d11fd34ad4ab0596b0f46f449ba72d59bbe57ace2f.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="//images.assets.djsp.eu/logos/flaschenpost-32x32-7042026413153104a378bb025f6d3aafd32fe82b99d948d397b91881490002c44d8e48bfaeabfddaac697f2212ca22471631dcdecf89e22e13659149dcf7157f.png">
+<html
+	>
+	<head
+		>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+			>
+		<link
+			rel="author"
+			href="/{% if page.lang %}{{ page.lang }}/home{% endif %}"
+			>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="//images.assets.djsp.eu/logos/flaschenpost-f9c742fe839cabb28b3f74a85de43c2c16c4f40940ffada4e1e965794e754cd0e7308d5f52fec9c611f5ad95f8b758201ee8240ffa5c9e3bb929bf4932550a28.svg"
+			>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="//images.assets.djsp.eu/logos/flaschenpost-16x16-54fdba452a441618d9183fe20e462d1c07ebb3cd81e051c5c688e811b04c67387428aaef08d49ebd80d097d11fd34ad4ab0596b0f46f449ba72d59bbe57ace2f.png"
+			>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="//images.assets.djsp.eu/logos/flaschenpost-32x32-7042026413153104a378bb025f6d3aafd32fe82b99d948d397b91881490002c44d8e48bfaeabfddaac697f2212ca22471631dcdecf89e22e13659149dcf7157f.png"
+			>
 		{% feed_meta %}
 		{% capture critical_css %}
 			{% include scssify.css css=page.layout type="critical" %}
 		{% endcapture %}
 		{% include embed/css.html css=critical_css %}
-		<link rel="stylesheet" href="{{ "/assets/css/" | append: page.layout | append: ".css" | relative_url }}">
+		<link
+			rel="stylesheet"
+			href="{{ "/assets/css/" | append: page.layout | append: ".css" | relative_url }}"
+			>
 		{% include head/{{ page.layout }}.html %}
 	</head>
-	<body>
-		<header id="site-header">
-			<a id="site-title" lang="de" href="{{ "/" | relative_url }}">{{ site.title }}</a>
-			<nav id="navibar">
+	<body
+		>
+		<header
+			id="site-header"
+			>
+			<a
+				href="{{ "/" | relative_url }}"
+				id="site-title"
+				lang="de"
+				>
+				{{ site.title }}
+			</a>
+			<nav
+				id="navibar"
+				>
 				{% for about in site.data.abouts %}
 					{% capture about_url %}/about/{{ about.lang }}{% endcapture %}
-				<a class="navibar-about-link navibar-about-link-{% if page.url == about_url %}current{% else %}other{% endif %}" lang="{{ about.lang }}" href="{{ about_url | relative_url }}">{{ about.title }}</a>
+				<a
+					class="navibar-about-link navibar-about-link-{% if page.url == about_url %}current{% else %}other{% endif %}"
+					href="{{ about_url | relative_url }}"
+					lang="{{ about.lang }}"
+					>
+					{{ about.title }}
+				</a>
 				{% endfor %}
 			</nav>
 		</header>
-		<main>
+		<main
+			>
 			{{ content }}
 		</main>
-		<footer id="site-footer">
-			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="https://www.djsp.eu/">{{ site.author }}</a></small>
-			<nav id="site-footer-right">
-				<a class="site-footer-icon-link" href="mailto:{{ site.email }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>
-				<a class="site-footer-icon-link" rel="external" href="https://github.com/kalrish/flaschenpost">{% include embed/svg.html name="github" class="site-footer-icon" %}</a>
-				<a class="site-footer-icon-link" rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">{% include embed/svg.html name="feed" class="site-footer-icon" %}</a>
+		<footer
+			id="site-footer"
+			>
+			<small
+				id="copyright-disclaimer"
+				>
+				Copyright &copy; <a rel="author" href="https://www.djsp.eu/">{{ site.author }}</a>
+			</small>
+			<nav
+				id="site-footer-right"
+				>
+				<a
+					class="site-footer-icon-link"
+					href="mailto:{{ site.email }}"
+					>
+					{% include embed/svg.html name="mail" class="site-footer-icon" %}
+				</a>
+				<a
+					class="site-footer-icon-link"
+					href="https://github.com/kalrish/flaschenpost"
+					rel="external"
+					>
+					{% include embed/svg.html name="github" class="site-footer-icon" %}
+				</a>
+				<a
+					class="site-footer-icon-link"
+					href="{{ "/feed.xml" | absolute_url }}"
+					rel="alternate"
+					type="application/atom+xml"
+					>
+					{% include embed/svg.html name="feed" class="site-footer-icon" %}
+				</a>
 			</nav>
 		</footer>
 	</body>

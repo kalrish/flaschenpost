@@ -1,2 +1,6 @@
 {% assign about = site.data.abouts | where: "lang", page.lang | first %}
-<title lang="{{ page.lang }}">{{ site.title }} &mdash; {{ about.title }}</title>
+<title
+	lang="{{ page.lang }}"
+	>
+	{{ site.title }} &mdash; {{ about.title }}
+</title>

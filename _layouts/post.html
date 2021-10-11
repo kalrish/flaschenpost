@@ -2,9 +2,14 @@
 layout: base
 ---
 {% include postnav.html dir="previous" svg="arrow-left" %}
-<div id="column-scans">
+<div
+	id="column-scans"
+	>
 	{% for scan in page.scans %}
-	<img class="scan" src="{{ scan }}">
+	<img
+		class="scan"
+		src="{{ scan }}"
+		>
 	{% endfor %}
 </div>
 {% include postnav.html dir="next" svg="arrow-right" %}
