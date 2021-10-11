@@ -1,3 +1,5 @@
+@import "fonts/tangerine/regular";
+
 @include critical(true) {
 	body {
 		display: flex;
@@ -12,7 +14,7 @@
 	
 	#site-title {
 		display: inline-block;
-		font-family: "tangerine";
+		font-family: Tangerine;
 		font-size: 75px;
 		//font-weight: bold;
 		margin-top: 17px;
